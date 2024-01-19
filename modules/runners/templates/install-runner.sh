@@ -46,9 +46,9 @@ os_id=$(awk -F= '/^ID/{print $2}' /etc/os-release)
 echo OS: $os_id
 
 # Install libicu on non-ubuntu
-if [[ ! "$os_id" =~ ^ubuntu.* ]]; then
-  dnf install -y libicu
-fi
+# if [[ ! "$os_id" =~ ^ubuntu.* ]]; then
+#   dnf install -y libicu
+# fi
 
 # Install dependencies for ubuntu
 if [[ "$os_id" =~ ^ubuntu.* ]]; then
