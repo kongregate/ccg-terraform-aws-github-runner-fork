@@ -153,7 +153,7 @@ build {
       "sudo systemctl enable mysqld && sudo systemctl restart mysqld",
       "mysql --connect-expired-password -u root -p$(sudo grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}') -e \"ALTER USER 'root'@'localhost' IDENTIFIED BY '*Giz7kxCFe2z'; FLUSH PRIVILEGES;\" ",
       "sudo dnf install -y amazon-cloudwatch-agent jq git docker",
-      "sudo dnf install -y lttng-ust openssl-libs krb5-libs zlib libicu",
+      "sudo dnf install -y lttng-ust openssl-libs krb5-libs zlib libicu zip unzip",
       "sudo systemctl enable docker.service",
       "sudo systemctl enable containerd.service",
       "sudo service docker start",
