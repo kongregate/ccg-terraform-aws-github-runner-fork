@@ -80,7 +80,52 @@
       "artifact_id": "us-east-1:ami-0106f761ffd69d9e5",
       "packer_run_uuid": "3d0f57f8-4069-3c22-8f8b-9bbb24dcbabc",
       "custom_data": null
+    },
+    {
+      "name": "githubrunner",
+      "builder_type": "amazon-ebs",
+      "build_time": 1707772332,
+      "files": null,
+      "artifact_id": "us-east-1:ami-01c64ad3b0f1dc973",
+      "packer_run_uuid": "66cf882a-069e-a02c-1a48-aab5964032eb",
+      "custom_data": null
+    },
+    {
+      "name": "githubrunner",
+      "builder_type": "amazon-ebs",
+      "build_time": 1707782226,
+      "files": null,
+      "artifact_id": "us-east-1:ami-0165101a424e737e4",
+      "packer_run_uuid": "54df75df-a92a-f68e-f5ae-fb4813726d76",
+      "custom_data": null
+    },
+    {
+      "name": "githubrunner",
+      "builder_type": "amazon-ebs",
+      "build_time": 1709158988,
+      "files": null,
+      "artifact_id": "us-east-1:ami-0f98d854ef7afebca",
+      "packer_run_uuid": "355c06d1-f051-3b68-c180-1b4e161d8f12",
+      "custom_data": null
+    },
+    {
+      "name": "githubrunner",
+      "builder_type": "amazon-ebs",
+      "build_time": 1712071393,
+      "files": null,
+      "artifact_id": "us-east-1:ami-01242d958d1e42b63",
+      "packer_run_uuid": "d80b93c8-461b-b188-32d9-b46328d76b51",
+      "custom_data": null
+    },
+    {
+      "name": "githubrunner",
+      "builder_type": "amazon-ebs",
+      "build_time": 1712076910,
+      "files": null,
+      "artifact_id": "us-east-1:ami-0566583a08355ccc0",
+      "packer_run_uuid": "b8c4fb9c-c5a7-56a8-6eb0-e3c029e26e07",
+      "custom_data": null
     }
   ],
-  "last_run_uuid": "3d0f57f8-4069-3c22-8f8b-9bbb24dcbabc"
+  "last_run_uuid": "b8c4fb9c-c5a7-56a8-6eb0-e3c029e26e07"
 }
