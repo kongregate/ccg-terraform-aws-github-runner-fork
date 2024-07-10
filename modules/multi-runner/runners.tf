@@ -63,7 +63,9 @@ module "runners" {
   lambda_runtime                   = var.lambda_runtime
   lambda_architecture              = var.lambda_architecture
   lambda_zip                       = var.runners_lambda_zip
+  lambda_scale_up_memory_size      = var.scale_up_lambda_memory_size
   lambda_timeout_scale_up          = var.runners_scale_up_lambda_timeout
+  lambda_scale_down_memory_size    = var.scale_down_lambda_memory_size
   lambda_timeout_scale_down        = var.runners_scale_down_lambda_timeout
   lambda_subnet_ids                = var.lambda_subnet_ids
   lambda_security_group_ids        = var.lambda_security_group_ids
@@ -84,6 +86,7 @@ module "runners" {
 
   enable_userdata       = each.value.runner_config.enable_userdata
   userdata_template     = each.value.runner_config.userdata_template
+  userdata_content      = each.value.runner_config.userdata_content
   userdata_pre_install  = each.value.runner_config.userdata_pre_install
   userdata_post_install = each.value.runner_config.userdata_post_install
   key_name              = var.key_name
