@@ -1,5 +1,45 @@
 # Changelog
 
+## [5.12.1](https://github.com/philips-labs/terraform-aws-github-runner/compare/v5.12.0...v5.12.1) (2024-07-05)
+
+
+### Bug Fixes
+
+* dependency updates lambda ([#3965](https://github.com/philips-labs/terraform-aws-github-runner/issues/3965)) ([a6df2b6](https://github.com/philips-labs/terraform-aws-github-runner/commit/a6df2b65dd74a911e9403f7ae7a03230d5003e8e))
+* improve logging when there is an error retrieving ssm parameters ([#3962](https://github.com/philips-labs/terraform-aws-github-runner/issues/3962)) ([1498c8c](https://github.com/philips-labs/terraform-aws-github-runner/commit/1498c8c2bdc4e1df8fd3671f2cc2c59d86c3eb92))
+
+## [5.12.0](https://github.com/philips-labs/terraform-aws-github-runner/compare/v5.11.0...v5.12.0) (2024-06-28)
+
+
+### Features
+
+* add support for matcher config tiering options ([#3953](https://github.com/philips-labs/terraform-aws-github-runner/issues/3953)) ([5f9d9eb](https://github.com/philips-labs/terraform-aws-github-runner/commit/5f9d9eb3f9fbda10495b9a2194dc91867942276e))
+* **lambda:** add option to define explicit lambda tags ([#3934](https://github.com/philips-labs/terraform-aws-github-runner/issues/3934)) ([7e98943](https://github.com/philips-labs/terraform-aws-github-runner/commit/7e98943c0b8962ebd0a231da233b431ba692c321))
+
+
+### Bug Fixes
+
+* **lambda:** bump braces from 3.0.2 to 3.0.3 in /lambdas ([#3944](https://github.com/philips-labs/terraform-aws-github-runner/issues/3944)) ([1aef82b](https://github.com/philips-labs/terraform-aws-github-runner/commit/1aef82b19fd1b53194b07ba650649f6d314e597c))
+* **lambda:** bump the aws group across 1 directory with 2 updates ([#3955](https://github.com/philips-labs/terraform-aws-github-runner/issues/3955)) ([2e094cf](https://github.com/philips-labs/terraform-aws-github-runner/commit/2e094cf242fd910d2e2451ece3946f7232f048b7))
+* **lambda:** bump the aws group across 1 directory with 6 updates ([#3949](https://github.com/philips-labs/terraform-aws-github-runner/issues/3949)) ([76fe9af](https://github.com/philips-labs/terraform-aws-github-runner/commit/76fe9af0ad25f2d7647c1c838c6a144b55a1105d))
+* **webhook:** Don't log warning when secondary job queue is empty ([#3942](https://github.com/philips-labs/terraform-aws-github-runner/issues/3942)) ([ef25bd4](https://github.com/philips-labs/terraform-aws-github-runner/commit/ef25bd44717d282cc123ada570b0b03cf76b4d7f))
+* **webhook:** Don't set `${SQS_WORKFLOW_JOB_QUEUE}` to empty string ([#3943](https://github.com/philips-labs/terraform-aws-github-runner/issues/3943)) ([6c48dff](https://github.com/philips-labs/terraform-aws-github-runner/commit/6c48dffff558dba78d013f10764fb65329b6523e))
+
+## [5.11.0](https://github.com/philips-labs/terraform-aws-github-runner/compare/v5.10.4...v5.11.0) (2024-05-22)
+
+
+### Features
+
+* add variable to configure ebs optimization for runner instances ([479b779](https://github.com/philips-labs/terraform-aws-github-runner/commit/479b779a71c77a62dd28d247f8a74cb75ce083f0))
+* add variable to configure ebs optimization for runner instances ([#3901](https://github.com/philips-labs/terraform-aws-github-runner/issues/3901)) ([479b779](https://github.com/philips-labs/terraform-aws-github-runner/commit/479b779a71c77a62dd28d247f8a74cb75ce083f0))
+* Restrict instance SSM permissions ([#3918](https://github.com/philips-labs/terraform-aws-github-runner/issues/3918)) ([9399cf2](https://github.com/philips-labs/terraform-aws-github-runner/commit/9399cf29bec963dfa305f367f37c098a76130371))
+
+
+### Bug Fixes
+
+* adding missing permissions to boundaries ([#3873](https://github.com/philips-labs/terraform-aws-github-runner/issues/3873)) ([93e8d27](https://github.com/philips-labs/terraform-aws-github-runner/commit/93e8d2746b647539212dbc65887ec748a1d734b7))
+* **lambda:** bump the aws group across 1 directory with 6 updates ([#3907](https://github.com/philips-labs/terraform-aws-github-runner/issues/3907)) ([50dda9a](https://github.com/philips-labs/terraform-aws-github-runner/commit/50dda9a465229bdb8d106e7ebc5d5b1de115a286))
+
 ## [5.10.4](https://github.com/philips-labs/terraform-aws-github-runner/compare/v5.10.3...v5.10.4) (2024-05-06)
 
 
