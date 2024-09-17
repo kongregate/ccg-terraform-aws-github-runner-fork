@@ -46,7 +46,7 @@ The "Scale Up Runner" Lambda actively monitors the SQS queue, processing incomin
 
 The Lambda first requests a JIT configuration or registration token from GitHub, which is needed later by the runner to register itself. This avoids the case that the EC2 instance, which later in the process will install the agent, needs administration permissions to register the runner. Next, the EC2 spot instance is created via the launch template. The launch template defines the specifications of the required instance and contains a [`user_data`](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) script. This script will install the required software and configure it. The configuration for the runner is shared via EC2 tags and the parameter store (SSM), from which the user data script will fetch it and delete it once it has been retrieved. Once the user data script is finished, the action runner should be online, and the workflow will start in seconds.
 
-The current method for scaling down runners employs a straightforward approach: at predefined intervals, the Lambda conducts a thorough examination of each runner (instance) to assess its activity. If a runner is found to be idle, it is deregistered from GitHub, and the associated AWS instance is terminated. For ephemeral runners the the instance is terminated immediately after the workflow is finished. To avoid orphaned runners the scale down lambda is active in this cae as well.
+The current method for scaling down runners employs a straightforward approach: at predefined intervals, the Lambda conducts a thorough examination of each runner (instance) to assess its activity. If a runner is found to be idle, it is deregistered from GitHub, and the associated AWS instance is terminated. For ephemeral runners the the instance is terminated immediately after the workflow is finished. Instances not registered in GitHub as a runner after a minimal boot time will be marked orphan and removed in a next cycle. To avoid orphaned runners the scale down lambda is active in this cae as well.
 
 ### Pool
 
@@ -66,9 +66,25 @@ The AMI cleaner is a lambda that will clean up AMIs that are older than a config
 
 ### Instance Termination Watcher
 
-> This feature is Beta, changes will not trigger a major release as long in beta.
+!!! Warning
 
-The Instance Termination Watcher is creating log and optional metrics for termination of instances. Currently only spot termination warnings are watched. See [configuration](configuration/) for more details. 
+    This feature is Beta, changes will not trigger a major release as long in beta.
+
+The Instance Termination Watcher is creating log and optional metrics for termination of instances. Currently only spot termination warnings are watched. See [configuration](configuration/) for more details.
+
+
+### Job Retry
+
+!!! Warning
+
+    This feature is Beta, changes will not trigger a major release as long in beta.
+
+The Job Retry will allow you to retry scaling when a job is not started. When enabled the scale up lambda will send a retry message to the a SQS queue. The job retry lambda will check after a delay if the job is still queued. And if so it will send a retry command de the scale up lambda via SQS. The feature is designed to be used with ephemeral runners. The feature is opt in, it will not be created by default.
+
+Consequences of enabling the feature are:
+- Increase of calls to the GitHub API, could cause reaching the rate limit.
+- Could create new instance when job are not started caused by other failures, resulting in more costs and useless instance creation.
+
 
 ### Security
 
